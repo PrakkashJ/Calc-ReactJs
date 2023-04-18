@@ -19,17 +19,17 @@ function Home() {
       return;
     }
     // console.log("res : ", res)
-    if (arg == "C") setRes("");
-    else if (arg == "=") {
+    if (arg == "C")
+      setRes("");
+    else if (arg == "=")
       findval();
-    }
     else if (arg == "Del") {
       let n = res.length;
       if (n > 0)
         setRes(res.slice(0, n - 1));
     }
     else if (res.indexOf('=').toString() != '-1')
-      setRes(arg);
+      setRes(res.slice(res.indexOf('=') + 1, res.length) + arg);
     else
       setRes(res.concat(arg));
   }
